@@ -1,0 +1,76 @@
+<div class="main">
+  <div class="weather-info">
+    <!-- <ul *ngFor="let day of week">
+      <ul *ngFor="let hour of day">
+        <li>
+          {{hour.timestamp_local}}: temp: {{hour.temp}}, wind spd: {{hour.wind_spd}}
+        </li>
+      </ul>
+      <br>
+    </ul> -->
+
+    <span class="temp">
+      <!-- {{curSelection[0].temp}} -->
+    </span>
+    <span class="deg">°F</span>
+    <span></span>
+  </div>
+  <div class="week">
+    <div
+      class="day"
+      [class.selected]="curDay === today"
+      (click)="switchDays(today)"
+    >
+      {{ days[today] }}
+      <!-- todo -->
+    </div>
+    <div
+      class="day"
+      [class.selected]="curDay === (today + 1) % 7"
+      (click)="switchDays((today + 1) % 7)"
+    >
+      {{ days[(today + 1) % 7] }}
+      <!-- todo -->
+    </div>
+    <div
+      class="day"
+      [class.selected]="curDay === (today + 2) % 7"
+      (click)="switchDays((today + 2) % 7)"
+    >
+      {{ days[(today + 2) % 7] }}
+      <!-- todo -->
+    </div>
+    <div
+      class="day"
+      [class.selected]="curDay === (today + 3) % 7"
+      (click)="switchDays((today + 3) % 7)"
+    >
+      {{ days[(today + 3) % 7] }}
+      <!-- todo -->
+    </div>
+    <div
+      class="day"
+      [class.selected]="curDay === (today + 4) % 7"
+      (click)="switchDays((today + 4) % 7)"
+    >
+      {{ days[(today + 4) % 7] }}
+      <!-- todo -->
+    </div>
+    <div
+      class="day"
+      [class.selected]="curDay === (today + 5) % 7"
+      (click)="switchDays((today + 5) % 7)"
+    >
+      {{ days[(today + 5) % 7] }}
+      <!-- todo -->
+    </div>
+    <div
+      class="day"
+      [class.selected]="curDay === (today + 6) % 7"
+      (click)="switchDays((today + 6) % 7)"
+    >
+      {{ days[(today + 6) % 7] }}
+      <!-- todo -->
+    </div>
+  </div>
+</div>

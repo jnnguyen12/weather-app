@@ -1,0 +1,47 @@
+<div class="title">
+  <span class="weather">
+    <h1>Weather</h1>
+    <!-- Weather -->
+  </span>
+  <span class="zipcode">
+    <span class="fuck"><h3>Ames, IA</h3> </span>
+    <input
+      type="number"
+      #zip
+      placeholder="zip code"
+      (click)="search_error = false; see()"
+    />
+    <button class="lookup" (click)="submit(zip.value)" *ngIf="search_visible">
+      <img src="../assets/search.png" alt="" />
+    </button>
+    <div *ngIf="search_error" class="alert">
+      <strong>Please enter 5-digit zip-code.</strong>
+    </div>
+  </span>
+</div>
+
+<div class="pages">
+  <div
+    class="page"
+    [class.selected]="currentTab === 'daily'"
+    (click)="switchTabs('daily')"
+  >
+    <h3>daily</h3>
+  </div>
+  <div
+    class="page"
+    [class.selected]="currentTab === 'fortnight'"
+    (click)="switchTabs('fortnight')"
+  >
+    <h3>fortnight</h3>
+  </div>
+  <div
+    class="page"
+    [class.selected]="currentTab === 'handbook'"
+    (click)="switchTabs('handbook')"
+  >
+    <h3>safety handbook</h3>
+  </div>
+</div>
+
+<app-forecast [week]="week" ></app-forecast>
